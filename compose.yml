@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+
+  database:
+    image: postgres:16.2-alpine3.19
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=sf
+    volumes: 
+      - ./database:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "user", "-d", "sf"]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+
+  backend:
+    build: ./backend
+    depends_on:
+          database:
+            condition: service_healthy
