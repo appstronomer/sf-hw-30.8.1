@@ -1,4 +1,4 @@
-module sfdb
+module github.com/appstronomer/sf-hw-30.8.1
 
 go 1.22.0
 

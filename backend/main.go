@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"log"
-	"sfdb/pkg/storage"
-	pg "sfdb/pkg/storage/postgres"
 	"time"
+
+	"github.com/appstronomer/sf-hw-30.8.1/pkg/storage"
+	pg "github.com/appstronomer/sf-hw-30.8.1/pkg/storage/postgres"
 )
 
 func main() {

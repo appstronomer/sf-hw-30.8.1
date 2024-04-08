@@ -1,6 +1,6 @@
 package storage
 
-import pg "sfdb/pkg/storage/postgres"
+import pg "github.com/appstronomer/sf-hw-30.8.1/pkg/storage/postgres"
 
 type Interface interface {
 	NewTask(pg.Task) (int, error)
